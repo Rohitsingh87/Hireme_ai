@@ -20,15 +20,12 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
+allow_origins=[
     "http://localhost:5173",
     "http://127.0.0.1:5173",
     "https://hireme-6oef0xewk-rohitsingh89032-9672s-projects.vercel.app",
-],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+    "https://hireme-ai-three.vercel.app",
+]
 
 
 # ==========================================
@@ -462,7 +459,7 @@ def chat(request: ChatRequest):
 
     except Exception as e:
         print("GROQ ERROR:", repr(e))
-    return {"answer": f"AI error: {str(e)}"}
+        return {"answer": f"AI error: {str(e)}"}
 
 
 # ==========================================
