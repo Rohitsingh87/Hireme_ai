@@ -17,16 +17,18 @@ app = FastAPI()
 # ==========================================
 # CORS
 # ==========================================
-
 app.add_middleware(
     CORSMiddleware,
-allow_origins=[
-    "http://localhost:5173",
-    "http://127.0.0.1:5173",
-    "https://hireme-6oef0xewk-rohitsingh89032-9672s-projects.vercel.app",
-    "https://hireme-ai-three.vercel.app",
-]
-
+    allow_origins=[
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
+        "https://hireme-6oef0xewk-rohitsingh89032-9672s-projects.vercel.app",
+        "https://hireme-ai-three.vercel.app",
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # ==========================================
 # ENVIRONMENT
