@@ -460,13 +460,9 @@ def chat(request: ChatRequest):
             "answer": answer
         }
 
-    except Exception as error:
-
-        print("Groq Error:", error)
-
-        return {
-            "answer": "Sorry, something went wrong while contacting the AI."
-        }
+    except Exception as e:
+        print("GROQ ERROR:", repr(e))
+    return {"answer": f"AI error: {str(e)}"}
 
 
 # ==========================================
